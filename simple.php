@@ -4,15 +4,13 @@
 	  <script type="text/javascript" src="ajaxupload.3.5.js"></script>
     <title></title>
     <meta content="">
-    <style>
-		#files{font-size: 10px;}
-    </style>
+    <style></style>
   </head>
   <body>
 		<span id="pilih_gambar">Pilih gambar</span>
 		<label id="status"></label>
-		<div id="files"></div>
 		<script type="text/javascript">
+		
 		(function($){
 			var btnUpload=$('#pilih_gambar');
 			var status=$('#status');
@@ -33,19 +31,10 @@
 					//Add uploaded file to list
 					if(response==="success"){
 						console.log('sukses bro');
-						if($("#files").html()){
-							$("#files").append("<span class='fileuploaded'>, "+file+"</span>");
-						}else{
-							$("#files").append("<span class='fileuploaded'>"+file+"</span>");
-						}
 					}else{
 						console.log('gagal bro');
 					}
 				}
-			});
-			$("#files").on("click",".fileuploaded",function(){
-				$(this).remove();
-				console.log($(this).html()+" removed");
 			});
 		}(jQuery))
 		</script>
