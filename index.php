@@ -15,7 +15,6 @@
 			var btnUpload=$('#pilih_gambar');
 			var status=$('#status');
 			new AjaxUpload(btnUpload, {
-				//action: 'http://ajaxuploader/handler.php/upload_file',
 				action: 'http://ajaxuploader/handler.php',
 				name: 'uploadfile',
 				onSubmit: function(file, ext){
@@ -27,15 +26,13 @@
 					status.text('Uploading...');
 				},
 				onComplete: function(file, response){
-					//update_userpic(file);
 					//On completion clear the status
 					status.text('');
 					//Add uploaded file to list
-					alert(response);
 					if(response==="success"){
-						alert('sukses bro');
+						console.log('sukses bro');
 					}else{
-						alert('gagal bro');
+						console.log('gagal bro');
 					}
 				}
 			});
